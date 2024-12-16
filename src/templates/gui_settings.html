@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneDriveGUI - Settings</title>
+    <link rel="stylesheet" href="/static/css/gui_settings.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OneDriveGUI - Settings</h1>
+
+        <form id="settingsForm">
+            <fieldset>
+                <legend>OneDriveGUI Behaviour</legend>
+                <label>
+                    <input type="checkbox" id="startMinimized"> Start OneDriveGUI minimized
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>OneDrive Client Options</legend>
+                <label for="clientBinPath">Path to OneDrive client binary:</label>
+                <input type="text" id="clientBinPath" name="clientBinPath">
+                <button type="button" id="browseClientBinPath">Browse</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Appearance (experimental)</legend>
+                <label>
+                    <input type="checkbox" id="framelessWindow"> Frameless Window for X11
+                </label>
+                <label>
+                    <input type="checkbox" id="combinedStartStop"> Combined Start/Stop button
+                </label>
+                <label>
+                    <input type="checkbox" id="qWebEngineLogin"> Use QWebEngine for login
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Logging</legend>
+                <label for="debugLevel">Debug level:</label>
+                <select id="debugLevel" name="debugLevel">
+                    <option value="DEBUG">DEBUG</option>
+                    <option value="INFO">INFO</option>
+                    <option value="WARNING">WARNING</option>
+                    <option value="ERROR">ERROR</option>
+                    <option value="CRITICAL">CRITICAL</option>
+                </select>
+                <label>
+                    <input type="checkbox" id="showDebug"> Show debug logs in console (stdout)
+                </label>
+                <label>
+                    <input type="checkbox" id="saveDebug"> Save debug logs to file
+                </label>
+                <label for="logFile">Log file:</label>
+                <input type="text" id="logFile" name="logFile">
+                <button type="button" id="browseLogFile">Browse</button>
+                <label for="logRotationInterval">Log rotation (hours):</label>
+                <input type="number" id="logRotationInterval" name="logRotationInterval" min="1">
+                <label for="logBackupCount">Log backup count:</label>
+                <input type="number" id="logBackupCount" name="logBackupCount" min="1">
+            </fieldset>
+
+            <button type="submit" id="saveSettings">Save</button>
+        </form>
+    </div>
+
+    <script src="/static/js/gui_settings.js"></script>
+</body>
+</html>

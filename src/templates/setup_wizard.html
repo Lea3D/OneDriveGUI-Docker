@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/setup_wizard.css">
+    <title>Setup Wizard</title>
+</head>
+<body>
+    <div class="setup-wizard-container">
+        <h1>Setup Wizard</h1>
+        <form id="setup-wizard-form">
+            <div class="form-group">
+                <label for="account-email">Account Email</label>
+                <input type="email" id="account-email" name="account_email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sync-dir">Sync Directory</label>
+                <input type="text" id="sync-dir" name="sync_dir" placeholder="Enter sync directory path" required>
+            </div>
+
+            <div class="form-group">
+                <label for="client-id">Client ID</label>
+                <input type="text" id="client-id" name="client_id" placeholder="Enter client ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="client-secret">Client Secret</label>
+                <input type="password" id="client-secret" name="client_secret" placeholder="Enter client secret" required>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn">Reset</button>
+        </form>
+        <div id="status-message"></div>
+    </div>
+    <script src="/static/js/setup_wizard.js"></script>
+</body>
+</html>

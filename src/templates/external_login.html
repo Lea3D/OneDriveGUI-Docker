@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Login</title>
+    <link rel="stylesheet" href="/static/css/external_login.css">
+</head>
+<body>
+    <div class="external-login-container">
+        <header>
+            <h1>External Login</h1>
+        </header>
+        <form id="login-form">
+            <label for="response-url">Response URL:</label>
+            <input type="text" id="response-url" name="response-url" placeholder="Enter response URL" required>
+            <div class="buttons">
+                <button type="submit">Login</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <div class="status">
+            <p id="status-message"></p>
+        </div>
+    </div>
+    <script src="/static/js/external_login.js"></script>
+</body>
+</html>

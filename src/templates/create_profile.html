@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Profile</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Create or Import a New Profile</h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="createProfileForm">
+                <label for="profileName">Profile Name:</label>
+                <input type="text" id="profileName" name="profileName" required>
+
+                <label for="syncDir">Sync Directory:</label>
+                <input type="text" id="syncDir" name="syncDir" required>
+
+                <label for="accountType">Account Type:</label>
+                <select id="accountType" name="accountType">
+                    <option value="Personal">Personal</option>
+                    <option value="Business">Business</option>
+                </select>
+
+                <label for="autoSync">Enable Auto Sync:</label>
+                <input type="checkbox" id="autoSync" name="autoSync">
+
+                <button type="submit">Create Profile</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="/static/js/create_profile.js"></script>
+</body>
+</html>

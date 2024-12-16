@@ -1,0 +1,69 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Container für den Hauptinhalt */
+.container {
+    width: 100%;
+    max-width: 428px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* Dropdown für Profile */
+.combo-box {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Allgemeine Button-Stile */
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #005ea2;
+}
+
+/* Menüleiste */
+.menu-bar {
+    background: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.menu-bar a:hover {
+    text-decoration: underline;
+}
