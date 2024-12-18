@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .menu-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background-color: #0078d4;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .menu-items a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .menu-items a:hover {
+            text-decoration: underline;
+        }
+        .tray-simulation button {
+            background-color: #005a9e;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .tray-simulation button:hover {
+            background-color: #004578;
+        }
+        .content {
+            padding: 20px;
+            height: calc(100vh - 60px);
+            overflow: auto;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 60px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <div class="menu-items">
+            <a href="#" onclick="loadPage('/setup_wizard')">Setup Wizard</a>
+            <a href="#" onclick="loadPage('/process_status')">Process Status</a>
+            <a href="#" onclick="loadPage('/profile_settings')">Profile Settings</a>
+            <a href="#" onclick="loadPage('/gui_settings')">GUI Settings</a>
+            <a href="#" onclick="loadPage('/external_login')">External Login</a>
+            <a href="#" onclick="loadPage('/import_existing_profile')">Import Existing Profile</a>
+            <a href="#" onclick="loadPage('/create_profile')">Create Profile</a>
+            <a href="#" onclick="loadPage('/login')">Login</a>
+            <a href="#" onclick="loadPage('/list_item_widget')">List Item Widget</a>
+        </div>
+        <div class="tray-simulation">
+            <button onclick="toggleMenu()">Show/Hide</button>
+            <button onclick="loadPage('/settings')">Settings</button>
+            <button onclick="quitApp()">Quit</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <iframe id="pageFrame" src="/setup_wizard"></iframe>
+    </div>
+
+    <script>
+        function loadPage(url) {
+            const iframe = document.getElementById('pageFrame');
+            iframe.src = url;
+        }
+
+        function toggleMenu() {
+            alert('Simulated Show/Hide action');
+        }
+
+        function quitApp() {
+            fetch('/quit', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

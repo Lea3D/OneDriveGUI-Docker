@@ -29,7 +29,7 @@ def quit_application():
 
 @main_bp.route('/', methods=['GET'])
 def home():
-    return render_template('main_window.html'), 200
+    return render_template('main_menu.html'), 200
 
 @main_bp.route('/favicon.ico', methods=['GET'])
 def favicon():

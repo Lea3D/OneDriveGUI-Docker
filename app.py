@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from routes.profile_routes import profile_bp
 from routes.sharepoint_routes import sharepoint_bp
 from routes.sync_routes import sync_bp
@@ -48,7 +48,7 @@ def create_app():
         print(f"Fehler beim Registrieren von gui_settings_bp: {e}")
 
     try:
-        app.register_blueprint(main_bp, url_prefix='/api/main')
+        app.register_blueprint(main_bp)
     except Exception as e:
         print(f"Fehler beim Registrieren von main_bp: {e}")
 
@@ -56,4 +56,4 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
